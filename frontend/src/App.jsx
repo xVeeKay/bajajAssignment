@@ -14,13 +14,16 @@ function App() {
 
       const body = JSON.parse(input);
 
-      const response = await fetch("https://localhost:3000/bfhl", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://bajajassignmentapi.onrender.com/bfhl",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
         },
-        body: JSON.stringify(body),
-      });
+      );
 
       const data = await response.json();
 
